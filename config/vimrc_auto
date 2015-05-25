@@ -1,0 +1,136 @@
+set nocompatible
+set number
+set smartindent
+set showmatch
+set matchtime=1
+set ruler
+set incsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set noautoindent
+set softtabstop=4
+set backspace=2
+set nobackup
+set clipboard+=unnamed
+set t_Co=256
+syntax on
+syntax enable
+set background=dark
+"colorscheme solarized
+
+"map
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+"inoremap < <><ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
+let g:ycm_global_ycm_extra_conf = '/home/zyc/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+filetype off                  " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+"
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/minibufexpl.vim'
+Bundle 'vim-scripts/cscope.vim'
+Bundle 'vim-scripts/ctags.vim'
+" original repos on GitHub
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non-GitHub repos
+Bundle 'git://git.wincent.com/command-t.git'
+" Git repos on your local machine (i.e. when working on your own plugin)
+Bundle 'file://Users/gmarik/path/to/plugin'
+Bundle 'Valloric/YouCompleteMe'
+filetype plugin indent on     " required!
+
+"taglist
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
+
+"ctags
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+"cscope
+map<C-F11> :call CscopeBuild()<CR>
+fun! CscopeBuild()
+    exec "! mkdir cscope"
+    exec "! cscope -Rbq -f cscope/xxx.out"
+endfunc
+
+
+"Compile and run
+map <F5> :call Run()<CR>
+func! Run()
+    echo &filetype
+
+    if &filetype == 'python'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ python3 %;"
+	endif
+
+	if &filetype == 'c'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ gcc -g % -o %<;
+	\ ./%<;"
+	endif
+
+	if &filetype == 'cpp'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ g++ -g % -o %<;
+	\ ./%<;"
+	endif
+
+    if &filetype == 'java'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ javac %;
+	\ java %<;"
+	endif
+endfunc
+
+"map <C-F5> :call Compile()<CR>
+"func! Compile()
+"	if &filetype == 'c'
+"	exec "w"
+"	exec "! 
+"    \ clear;
+"	\ gcc -g % -o %<;"
+"	endif
+"
+"	if &filetype == 'cpp'
+"	exec "w"
+"	exec "! 
+"    \ clear;
+"	\ g++ -g % -o %<;"
+"	endif
+"
+"    if &filetype == 'java'
+"	exec "w"
+"	exec "! 
+"    \ clear;
+"	\ javac %;"
+"	endif
+"endfunc
