@@ -1,0 +1,130 @@
+set nocompatible
+set number
+set smartindent
+set showmatch
+set matchtime=1
+set ruler
+set incsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set noautoindent
+set softtabstop=4
+set backspace=2
+set fdm=marker
+"下划线高亮显示光标所在行
+"set cursorline
+"搜索时忽略大小写
+"set ignorecase
+"高亮显示搜索匹配到的字符串
+set hlsearch
+
+"补全
+filetype plugin indent on
+let g:SuperTabRetainCompletionType = 1
+let g:SuperTabDefaultCompletionType = "<C-N>"
+
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+
+"ctags
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+
+"cscope
+map<C-F11> :call CscopeBuild()<CR>
+fun! CscopeBuild()
+    exec "! mkdir cscope"
+    exec "! cscope -Rbq -f cscope/xxx.out"
+endfunc
+
+"taglist
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
+
+
+set nobackup
+set clipboard+=unnamed
+set t_Co=256
+syntax on
+syntax enable
+set background=dark
+"colorscheme solarized
+
+"vimgdb
+"set previewheight=12
+"run macros/gdb_mappings.vim
+"set asm=0
+"set gdbprg=/usr/bin/gdb
+"set splitbelow
+"set splitright
+
+"map
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+"inoremap < <><ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
+"Compile and run
+map <F5> :call Run()<CR>
+func! Run()
+	if &filetype == 'c'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ gcc -g % -o %<;
+	\ ./%<;"
+	endif
+
+	if &filetype == 'cpp'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ g++ -g % -o %<;
+	\ ./%<;"
+	endif
+
+    if &filetype == 'java'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ javac %;
+	\ java %<;"
+	endif
+
+    if &filetype == 'python'
+        exec "w"
+        exec "!
+        \clear;
+        \ python3 %;"
+    endif
+endfunc
+
+map <C-F5> :call Compile()<CR>
+func! Compile()
+	if &filetype == 'c'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ gcc -g % -o %<;"
+	endif
+
+	if &filetype == 'cpp'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ g++ -g % -o %<;"
+	endif
+
+    if &filetype == 'java'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ javac %;"
+	endif
+endfunc
