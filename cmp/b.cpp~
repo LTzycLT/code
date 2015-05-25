@@ -1,0 +1,112 @@
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <cmath>
+#include <queue>
+#include <vector>
+#include <string>
+#include <utility>
+#include <stack>
+#include <set>
+#include <map>
+#include <limits>
+using namespace std;
+#define clr(a, b) memset(a, b, sizeof(a))
+#define REP(i, n) for (i = 0; i < (int)(n); ++i)
+#define FOR(i, n) for (i = 1; i <= (int)(n); ++i)
+#define LIN(i, u) for (i = head[u]; ~i; i = nxt[i])
+#define MP make_pair
+#define PB push_back
+#define MAX(a, b, c) max(a, max(b, c))
+#define MIN(a, b, c) min(a, min(b, c))
+#define all(x) (x).begin(), (x).end()
+#define ls(i) (i << 1)
+#define rs(i) (i << 1 | 1)
+#define pi (atan(1.0) * 4)
+typedef long long ll;
+typedef unsigned long long ull;
+typedef pair<int, int> pii;
+
+//}
+
+int T, dig[20], m, k;
+long long n, mul[20], dp[20][20];
+
+void init(long long n) {
+    m = 0;
+    while (n) {
+        dig[++m] = n % 10;
+        n /= 10;
+    }
+    reverse(dig + 1, dig + 1 + m);
+}
+
+long long dfs(int *dig, int l, int r) {
+    if (l > r) return 0;
+    if (l == r) return dig[l] * mul[m - l];
+    if (dig[l] == dig[l - 1]) return dp[l][r] = dfs(dig, l + 1, r) + dig[l] * mul[m - l];
+
+    long long val = 0;
+    for (int i = l; i <= r; ++i) val = val * 10 + dig[i];
+    if (val == 0) return dp[l][r] = 0;
+
+    int d[20];
+    for (int i = 1; i <= m; ++i) d[i] = dig[i];
+
+    long long x = val;
+    if (dig[r] < dig[r + 1]) x -= (dig[r] + 1);
+    if (x > 0) {
+        for (int i = r; i >= l; --i) {
+            d[i] = x % 10;
+            x /= 10;
+        }
+        if (d[l] == d[l - 1]) dp[l][r] = max(dp[l][r], dfs(d, l + 1, r) + dig[l] * mul[m - l]);
+        else {
+            d[r] = dig[r + 1];
+            dp[l][r] = max(dp[l][r], dfs(d, l, r - 1) + dig[r + 1] * mul[m - r]);
+        }
+    }
+
+    long long y = val;
+    if (dig[l] > dig[r]) y -= (dig[r] + 1);
+    if (y > 0) {
+        for (int i = r; i >= l; --i) {
+            d[i] = y % 10;
+            y /= 10;
+        }
+        if (d[l] == d[l - 1]) dp[l][r] = max(dp[l][r], dfs(d, l + 1, r) + dig[l] * mul[m - l]);
+        else {
+            d[r] = d[l];
+            dp[l][r] = max(dp[l][r], dfs(d, l + 1, r - 1) + d[l] * (mul[m - r] + mul[m - l]));
+        }
+    }
+
+    return dp[l][r];
+}
+
+long long cal(long long n) {
+    init(n);
+    if (dig[m] < dig[1]) n -= (dig[m] + 1);
+    init(n);
+
+    if (m == 1) return n;
+
+    clr(dp, 0);
+    dig[m] = dig[1];
+    long long ans = dfs(dig, 2, m - 1) + dig[1] * (mul[m - 1] + 1);
+    return ans;
+}
+
+int main() {
+//    freopen("in", "r", stdin);
+    mul[0] = 1;
+    for (int i = 1; i < 20; ++i) mul[i] = mul[i - 1] * 10;
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%lld", &n);
+        printf("%lld\n", cal(n - 1));
+    }
+    return 0;
+}
+

@@ -1,0 +1,135 @@
+#include<stdio.h>
+#include<string.h>
+#include<iostream>
+#include<algorithm>
+#include<math.h>
+#include<map>
+#include<vector>
+#include<string>
+#include<set>
+#include<queue>
+#define MP(x,y) make_pair(x,y)
+#define clr(x,y) memset(x,y,sizeof(x))
+#define forn(i,n) for(int i=0;i<n;i++)
+#define sqr(x) ((x)*(x))
+#define ll long long
+using namespace std;
+
+const int N = 200005;
+ll mod = 1e9+7;
+ll magic = 12347;
+vector<int> son[N],dep[N];
+int l[N],r[N],p[N],x;
+struct item{
+    int d,u;
+    ll w;
+}a[2*N];
+struct node{
+    int l,r;
+    ll w,sum;
+}s[4*N];
+ll val[N];
+int n,m;
+
+void dfs(int u,int dd){
+    x++;
+    dep[dd].push_back(u);
+    p[u] = x;
+    l[u] = x;
+    for(int i=0;i<son[u].size();i++)
+        dfs(son[u][i],dd+1);
+    r[u]=x;
+}
+bool cmp(item a,item b){
+    return a.d<b.d;
+}
+void init(int l,int r,int rt){
+    int mid=(l+r)/2;
+    s[rt].l=l;
+    s[rt].r=r;
+    s[rt].w=s[rt].sum=0;
+    if(l==r) return ;
+    init(l,mid,rt*2);
+    init(mid+1,r,rt*2+1);
+}
+void add(int l,ll w,int  rt){
+    s[rt].w+=w;
+    s[rt].w%=mod;
+    if(s[rt].l == s[rt].r) return ;
+    int mid = (s[rt].l+s[rt].r)/2;
+    if(l<=mid) add(l,w,rt*2);
+    else add(l,w,rt*2+1);
+}
+void add(int l,int r,ll w,int rt){
+    if(s[rt].l==l&&s[rt].r==r){
+        s[rt].sum =(s[rt].sum + s[rt].w*w%mod)%mod;
+        return ;
+    }
+    int mid=(s[rt].l+s[rt].r)/2;
+    if(r<=mid) add(l,r,w,rt*2);
+    else if(l>mid) add(l,r,w,rt*2+1);
+    else{
+        add(l,mid,w,rt*2);
+        add(mid+1,r,w,rt*2+1);
+    }
+}
+ll query(int rt){
+    ll ans = s[rt].sum%mod;
+    if(s[rt].l!=s[rt].r){
+        ans += query(rt*2)+query(rt*2+1);
+    }
+    return ans%mod;
+}
+int main() {
+//    freopen("/home/zyc/Downloads/in","r",stdin);
+//    freopen("/home/zyc/Downloads/out","w",stdout);
+//    freopen("/home/zyc/Documents/Code/cpp/in","r",stdin);
+    int T,cas=0;
+    scanf("%d",&T);
+    while(T--) {
+        scanf("%d",&n);
+        for(int i=1;i<=n;i++){
+            son[i].clear();
+            dep[i].clear();
+        }
+        for(int i=2;i<=n;i++){
+            int f;
+            scanf("%d",&f);
+            son[f].push_back(i);
+        }
+        val[n]=1;
+        for(int i=n-1;i>=1;i--){
+            val[i] = val[i+1]*magic%mod;
+        }
+        x=0;
+        dfs(1,1);
+        scanf("%d",&m);
+        for(int i=0;i<m;i++){
+            int l,r,u,w;
+            scanf("%d%d%d%d",&u,&l,&r,&w);
+            a[i].d=l;a[i].u=u;a[i].w=w;
+            a[i+m].d=r+1;a[i+m].u=u;a[i+m].w=-w;
+        }
+        m*=2;
+        sort(a,a+m,cmp);
+        init(1,n,1);
+        int j=n;
+        for(int i=m-1;i>=0;i--){
+            while(j>=1 && j>=a[i].d){
+                for(int k=0;k<dep[j].size();k++){
+                    int u = dep[j][k];
+                    add(p[u],val[u],1);
+                }
+                j--;
+            }
+            int u=a[i].u;
+            add(l[u],r[u],a[i].w,1);
+        }
+        printf("Case %d: ",++cas);
+        cout<<query(1)<<endl;
+
+    }
+    return 0;
+}
+
+

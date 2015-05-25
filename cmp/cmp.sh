@@ -1,0 +1,16 @@
+g++ a.cpp -o a
+g++ b.cpp -o b
+g++ data.cpp -o data
+
+flag=1
+while (( $flag==1 ))
+do
+./data>data.in
+./a<data.in>a.out
+./b<data.in>b.out
+diff a.out b.out > res
+if [ -s res ] 
+then
+flag=2
+fi
+done

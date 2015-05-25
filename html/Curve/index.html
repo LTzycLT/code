@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="jquery-2.0.3.min.js"></script>
+</head>
+<body>
+
+<script>
+//    data = [
+//["ㄅ",0,0,48,60],
+//["ㄉ",48,0,96,60],
+//["ˇ",96,0,144,60],
+//["ˋ",144,0,192,60],
+//["ㄓ",192,0,240,60],
+//["ˊ",240,0,288,60],
+//["˙",288,0,336,60],
+//["ㄚ",336,0,384,60],
+//["ㄞ",384,0,432,60],
+//["ㄢ",432,0,480,60],
+//["ㄆ",0,60,48,120],
+//["ㄊ",48,60,96,120],
+//["ㄍ",96,60,144,120],
+//["ㄐ",144,60,192,120],
+//["ㄔ",192,60,240,120],
+//["ㄗ",240,60,288,120],
+//["ㄧ",288,60,336,120],
+//["ㄛ",336,60,384,120],
+//["ㄟ",384,60,432,120],
+//["ㄣ",432,60,480,120],
+//["ㄇ",0,120,48,180],
+//["ㄋ",48,120,96,180],
+//["ㄎ",96,120,144,180],
+//["ㄑ",144,120,192,180],
+//["ㄕ",192,120,240,180],
+//["ㄘ",240,120,288,180],
+//["ㄨ",288,120,336,180],
+//["ㄜ",336,120,384,180],
+//["ㄠ",384,120,432,180],
+//["ㄤ",432,120,480,180],
+//["ㄈ",0,180,48,240],
+//["ㄌ",48,180,96,240],
+//["ㄏ",96,180,144,240],
+//["ㄒ",144,180,192,240],
+//["ㄖ",192,180,240,240],
+//["ㄙ",240,180,288,240],
+//["ㄩ",288,180,336,240],
+//["ㄝ",336,180,384,240],
+//["ㄡ",384,180,432,240],
+//["ㄥ",432,180,480,240],
+//["ㄦ",288,240,336,320],
+//["ˉ",144,240,240,320]
+//]
+
+data = [
+['q',0,0,48,81],
+['w',48,0,96,81],
+['e',96,0,144,81],
+['r',144,0,192,81],
+['t',192,0,240,81],
+['y',240,0,288,81],
+['u',288,0,336,81],
+['i',336,0,384,81],
+['o',384,0,432,81],
+['p',432,0,480,81],
+['a',24,81,72,162],
+['s',72,81,120,162],
+['d',120,81,168,162],
+['f',168,81,216,162],
+['g',216,81,264,162],
+['h',264,81,312,162],
+['j',312,81,360,162],
+['k',360,81,408,162],
+['l',408,81,456,162],
+['z',72,162,120,243],
+['x',120,162,168,243],
+['c',168,162,216,243],
+['v',216,162,264,243],
+['b',264,162,312,243],
+['n',312,162,360,243],
+['m',360,162,408,243]
+]
+
+    function line(cxt,x1,y1,x2,y2){
+        cxt.moveTo(x1,y1);
+        cxt.lineTo(x2,y2);
+        cxt.stroke();
+    }
+
+    function rectangle(cxt,x1,y1,x2,y2,ch)
+    {
+        line(cxt,x1,y1,x2,y1);
+        line(cxt,x1,y1,x1,y2);
+        line(cxt,x2,y1,x2,y2);
+        line(cxt,x1,y2,x2,y2);
+        cxt.strokeText(ch,(x1+x2)/2,(y1+y2)/2);
+    }
+    function circle(cxt,x,y,type)
+    {
+        cxt.beginPath();
+        cxt.arc(x, y, 3, 0, Math.PI * 2, true);
+              //不关闭路径路径会一直保留下去，当然也可以利用这个特点做出意想不到的效果
+        cxt.closePath();
+        if(type == 1)    cxt.fillStyle = 'rgba(0,255,0,0.25)';
+        else cxt.fillStyle='rgba(255,0,0,0.25)';
+        cxt.fill();
+    }
+    function drawkeyboard(cxt){
+        for(var i = 0; i<data.length; i++)
+            rectangle(cxt,data[i][1],data[i][2],data[i][3],data[i][4],data[i][0])
+    }
+    function drawcurve(points){
+//        clear()
+        for(var i = 0; i<points.length - 1; i++)
+        {
+            //circle(cxt, points[i][0], points[i][1], i % 2);
+            line(cxt,points[i][0],points[i][1],parseInt(points[i + 1][0]),parseInt(points[i + 1][1]));
+        }
+    }
+    function drawcmp(points1, points2)
+    {
+        for(var i = 0; i<points1.length; i++)
+        {
+            circle(cxt, points1[i][0], points1[i][1], 0);
+        }
+        for(var i = 0; i<points2.length; i++)
+        {
+            circle(cxt, points2[i][0], points2[i][1], 1);
+        }
+        for(var i = 0; i < Math.min(points1.length, points2.length); i+=2)
+            line(cxt, points1[i][0], points1[i][1], points2[i][0], points2[i][1]);
+    }
+    function clear(){
+        canvas.width = canvas.width; // Clears the canvas
+        cxt.strokeStyle = "#000000";
+        cxt.lineJoin = "round";
+        cxt.lineWidth = 1;
+        drawkeyboard(cxt);
+    }
+
+</script>
+
+<div>
+<canvas id="myCanvas" width="480" height="320" style="border:1px solid #c3c3c3;margin-left: 500px;">
+    Your browser does not support the canvas element.
+</canvas>
+</div>
+<div style="margin-left: 500px;margin-top: 10px">
+    <button id="clear">clear</button>
+    <button id="draw">draw</button>
+    <button id="draw2">draw2</button>
+    <button id="curve">curve</button>
+</div>
+<div>
+    <textarea id="show" style="margin-top:20px;margin-left:500px;width:200px;height:500px;"></textarea>
+    <textarea id="show2" style="margin-top:20px;margin-left:100px;width:200px;height:500px;"></textarea>
+</div>
+
+
+
+<script type="text/javascript">
+
+    var canvas=document.getElementById("myCanvas");
+    var cxt=canvas.getContext("2d");
+    var clickX = new Array();
+    var clickY = new Array();
+    var clickDrag = new Array();
+    var allow = false;
+    var paint = false;
+
+    $("#clear").click(function(){clear()})
+    $("#draw").click(function(){
+        var str = $("#show").val();
+        var items = str.split("\n")
+        var points = []
+        for(var i = 0; i < items.length; i++){
+            var tmp = items[i].split(" ");
+            points[i] = tmp;
+        }
+        drawcurve(points)
+    })
+    $("#draw2").click(function(){
+        var str = $("#show").val();
+        var items = str.split("\n")
+        var points = []
+        for(var i = 0; i < items.length; i++){
+            var tmp = items[i].split(" ");
+            points[i] = tmp;
+        }
+        var str = $("#show2").val();
+        var items2 = str.split("\n")
+        var points2 = []
+        for(var i = 0; i < items2.length; i++){
+            var tmp = items2[i].split(" ");
+            points2[i] = tmp;
+        }
+        drawcmp(points, points2);
+    })
+    $("#curve").click(function(){
+        drawkeyboard(cxt);
+        allow = true
+        clickX = new Array();
+        clickY = new Array();
+        clickDrag = new Array();
+    })
+
+    function addClick(x, y, dragging)
+    {
+        clickX.push(x);
+        clickY.push(y);
+        clickDrag.push(dragging);
+    }
+    $('#myCanvas').mousedown(function(e){
+        if(allow)
+            paint = true;
+        else
+            return;
+        var mouseX = e.pageX - this.offsetLeft;
+        var mouseY = e.pageY - this.offsetTop;
+        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+        redraw();
+    });
+
+    $('#myCanvas').mousemove(function(e){
+        if(paint){//是不是按下了鼠标
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+            redraw();
+        }
+    });
+    $('#myCanvas').mouseup(function(e){
+        if(paint == false || allow == false) return
+        allow = false;
+        paint = false;
+        paintline();
+    });
+    $('#myCanvas').mouseleave(function(e){
+        if(paint == false || allow == false) return
+        allow = false;
+        paint = false;
+        paintline();
+    });
+    function paintline(){
+        var size = clickX.length;
+        var str = "";
+        var count = 0;
+        for(var i = 0; i < size; i+=3){
+            count++;
+            str += clickX[i]+" "+clickY[i]+"\n";
+        }
+        str = count + '\n' + str;
+        $("#show").val(str);
+    }
+    function redraw(){
+        cxt.strokeStyle = "#df4b26";
+        cxt.lineJoin = "round";
+        if(clickX.length > 1){
+            var i = clickX.length - 1;
+            cxt.moveTo(clickX[i - 1], clickY[i - 1])
+            cxt.lineTo(clickX[i], clickY[i]);
+        }
+        cxt.stroke();
+    }
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int rand1(int x){
+	return 1+rand()%x;
+}
+int rand0(int x){
+	return rand()%(x+1);
+}
+int main(){
+    srand(time(NULL));
+    int n=300000;
+    for(int i=0;i<n;i++){
+        putchar('a' + rand0(2));
+    }
+    puts("");
+    int x=rand1(10),y=rand1(10);
+    for(int i=0;i<x;i++){
+        putchar('a' + rand0(2));
+    }
+    puts("");
+    for(int i=0;i<y;i++){
+        putchar('a' + rand0(2));
+    }
+    puts("");
+	return 0;
+}
+

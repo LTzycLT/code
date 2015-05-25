@@ -1,0 +1,262 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MAX	2014ProvincalSelection/0.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/1.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/10.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/11.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/2.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/3.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/4.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/5.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/6.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/7.cpp	15;"	d	file:
+MAX	2014ProvincalSelection/A.cpp	15;"	d	file:
+MAX	cf#250/A.cpp	15;"	d	file:
+MAX	cf#250/B.cpp	15;"	d	file:
+MAX	cf#250/C.cpp	15;"	d	file:
+MAX	cf#250/D.cpp	14;"	d	file:
+MAX	hdu4829.cpp	15;"	d	file:
+MAX	hdu4830.cpp	15;"	d	file:
+MAX	hdu4831.cpp	15;"	d	file:
+MAX	template.cpp	15;"	d	file:
+MP	2013杭州现场赛G.cpp	15;"	d	file:
+MP	2014ProvincalSelection/0.cpp	11;"	d	file:
+MP	2014ProvincalSelection/1.cpp	11;"	d	file:
+MP	2014ProvincalSelection/10.cpp	11;"	d	file:
+MP	2014ProvincalSelection/11.cpp	11;"	d	file:
+MP	2014ProvincalSelection/2.cpp	11;"	d	file:
+MP	2014ProvincalSelection/3.cpp	11;"	d	file:
+MP	2014ProvincalSelection/4.cpp	11;"	d	file:
+MP	2014ProvincalSelection/5.cpp	11;"	d	file:
+MP	2014ProvincalSelection/6.cpp	11;"	d	file:
+MP	2014ProvincalSelection/7.cpp	11;"	d	file:
+MP	2014ProvincalSelection/A.cpp	11;"	d	file:
+MP	cf#250/A.cpp	11;"	d	file:
+MP	cf#250/B.cpp	11;"	d	file:
+MP	cf#250/C.cpp	11;"	d	file:
+MP	cf#250/D.cpp	10;"	d	file:
+MP	hdu4829.cpp	11;"	d	file:
+MP	hdu4830.cpp	11;"	d	file:
+MP	hdu4831.cpp	11;"	d	file:
+MP	template.cpp	11;"	d	file:
+N	2013杭州现场赛G.cpp	/^const int N = 200000;$/;"	v
+Q	2013杭州现场赛G.cpp	/^int n,Q;$/;"	v
+a	2014ProvincalSelection/1.cpp	/^int a[1000],b[1000],c[1000];$/;"	v
+a	2014ProvincalSelection/2.cpp	/^}a[100];$/;"	v	typeref:struct:item
+a	2014ProvincalSelection/5.cpp	/^int a[1000000];$/;"	v
+a	2014ProvincalSelection/7.cpp	/^vector<int> a[50];$/;"	v
+a	cf#250/A.cpp	/^int a[4];$/;"	v
+a	cf#250/B.cpp	/^int a[100];$/;"	v
+a	cf#250/C.cpp	/^int g[1005][1005],a[1005];$/;"	v
+a	cf#250/D.cpp	/^}a[100005];$/;"	v	typeref:struct:item
+a	hdu4827.cpp	/^    int a,b;$/;"	m	struct:item	file:	access:public
+a	hdu4831.cpp	/^}a[10005];$/;"	v	typeref:struct:item
+ac	2014ProvincalSelection/5.cpp	/^bool ac(int x){$/;"	f	signature:(int x)
+add	hdu4831.cpp	/^void add(int l,int number){$/;"	f	signature:(int l,int number)
+ans	2013杭州现场赛G.cpp	/^vector<ll> ans;$/;"	v
+ans	2014ProvincalSelection/6.cpp	/^int three[100000][3],ans[100000];$/;"	v
+ans	cf#250/B.cpp	/^vector<int> ans;$/;"	v
+b	2014ProvincalSelection/1.cpp	/^int a[1000],b[1000],c[1000];$/;"	v
+b	hdu4827.cpp	/^    int a,b;$/;"	m	struct:item	file:	access:public
+bit	2013杭州现场赛G.cpp	/^const int bit=62;$/;"	v
+c	2014ProvincalSelection/1.cpp	/^int a[1000],b[1000],c[1000];$/;"	v
+calc	2013杭州现场赛G.cpp	/^void calc(){$/;"	f	signature:()
+ch	2013杭州现场赛G.cpp	/^const int ch=2;$/;"	v
+clr	2013杭州现场赛G.cpp	13;"	d	file:
+clr	2014ProvincalSelection/0.cpp	12;"	d	file:
+clr	2014ProvincalSelection/1.cpp	12;"	d	file:
+clr	2014ProvincalSelection/10.cpp	12;"	d	file:
+clr	2014ProvincalSelection/11.cpp	12;"	d	file:
+clr	2014ProvincalSelection/2.cpp	12;"	d	file:
+clr	2014ProvincalSelection/3.cpp	12;"	d	file:
+clr	2014ProvincalSelection/4.cpp	12;"	d	file:
+clr	2014ProvincalSelection/5.cpp	12;"	d	file:
+clr	2014ProvincalSelection/6.cpp	12;"	d	file:
+clr	2014ProvincalSelection/7.cpp	12;"	d	file:
+clr	2014ProvincalSelection/A.cpp	12;"	d	file:
+clr	cf#250/A.cpp	12;"	d	file:
+clr	cf#250/B.cpp	12;"	d	file:
+clr	cf#250/C.cpp	12;"	d	file:
+clr	cf#250/D.cpp	11;"	d	file:
+clr	hdu4829.cpp	12;"	d	file:
+clr	hdu4830.cpp	12;"	d	file:
+clr	hdu4831.cpp	12;"	d	file:
+clr	template.cpp	12;"	d	file:
+cmp	2013杭州现场赛G.cpp	/^bool cmp(ll a,ll b){$/;"	f	signature:(ll a,ll b)
+cmp	2014ProvincalSelection/2.cpp	/^bool cmp(item a,item b){$/;"	f	signature:(item a,item b)
+cmp	cf#250/D.cpp	/^int cmp(item a,item b){$/;"	f	signature:(item a,item b)
+cnt	2014ProvincalSelection/7.cpp	/^int cnt,s;$/;"	v
+d	2014ProvincalSelection/11.cpp	/^int d[100005];$/;"	v
+d	2014ProvincalSelection/2.cpp	/^    int d,h;$/;"	m	struct:item	file:	access:public
+dfs	2013杭州现场赛G.cpp	/^void dfs(int u,int f,ll val){$/;"	f	signature:(int u,int f,ll val)
+dfs	2014ProvincalSelection/7.cpp	/^void dfs(int u,vector<int> path){$/;"	f	signature:(int u,vector<int> path)
+dp	2014ProvincalSelection/10.cpp	/^ll dp[10005][2];$/;"	v
+dp	2014ProvincalSelection/3.cpp	/^ll dp[100005][2];$/;"	v
+dp	hdu4827.cpp	/^ll rev[1000005],dp[1000005];$/;"	v
+dp	hdu4828.cpp	/^ll rev[1000005],dp[1000005];$/;"	v
+e	2013杭州现场赛G.cpp	/^vector<pair<int,ll> > e[N];$/;"	v
+f	cf#250/D.cpp	/^int f[100005],n,m;$/;"	v
+find	cf#250/D.cpp	/^int find(int u){$/;"	f	signature:(int u)
+flag	cf#250/C.cpp	/^bool flag[1005];$/;"	v
+forn	2013杭州现场赛G.cpp	14;"	d	file:
+forn	2014ProvincalSelection/0.cpp	13;"	d	file:
+forn	2014ProvincalSelection/1.cpp	13;"	d	file:
+forn	2014ProvincalSelection/10.cpp	13;"	d	file:
+forn	2014ProvincalSelection/11.cpp	13;"	d	file:
+forn	2014ProvincalSelection/2.cpp	13;"	d	file:
+forn	2014ProvincalSelection/3.cpp	13;"	d	file:
+forn	2014ProvincalSelection/4.cpp	13;"	d	file:
+forn	2014ProvincalSelection/5.cpp	13;"	d	file:
+forn	2014ProvincalSelection/6.cpp	13;"	d	file:
+forn	2014ProvincalSelection/7.cpp	13;"	d	file:
+forn	2014ProvincalSelection/A.cpp	13;"	d	file:
+forn	cf#250/A.cpp	13;"	d	file:
+forn	cf#250/B.cpp	13;"	d	file:
+forn	cf#250/C.cpp	13;"	d	file:
+forn	cf#250/D.cpp	12;"	d	file:
+forn	hdu4829.cpp	13;"	d	file:
+forn	hdu4830.cpp	13;"	d	file:
+forn	hdu4831.cpp	13;"	d	file:
+forn	template.cpp	13;"	d	file:
+g	cf#250/C.cpp	/^int g[1005][1005],a[1005];$/;"	v
+get	2013杭州现场赛G.cpp	/^void get(int rt,vector<ll> &a){$/;"	f	signature:(int rt,vector<ll> &a)
+get	2014ProvincalSelection/1.cpp	/^vector<int> get(int num){$/;"	f	signature:(int num)
+h	2014ProvincalSelection/2.cpp	/^    int d,h;$/;"	m	struct:item	file:	access:public
+h	hdu4831.cpp	/^    int x,h;$/;"	m	struct:item	file:	access:public
+idx	hdu4831.cpp	/^int idx[100005];$/;"	v
+inf	2013杭州现场赛G.cpp	/^const int inf=1<<20;$/;"	v
+insert	2013杭州现场赛G.cpp	/^void insert(ll val){$/;"	f	signature:(ll val)
+item	2014ProvincalSelection/2.cpp	/^struct item{$/;"	s	file:
+item	cf#250/D.cpp	/^struct item{$/;"	s	file:
+item	hdu4827.cpp	/^struct item{$/;"	s	file:
+item	hdu4831.cpp	/^struct item{$/;"	s	file:
+item::a	hdu4827.cpp	/^    int a,b;$/;"	m	struct:item	file:	access:public
+item::b	hdu4827.cpp	/^    int a,b;$/;"	m	struct:item	file:	access:public
+item::d	2014ProvincalSelection/2.cpp	/^    int d,h;$/;"	m	struct:item	file:	access:public
+item::h	2014ProvincalSelection/2.cpp	/^    int d,h;$/;"	m	struct:item	file:	access:public
+item::h	hdu4831.cpp	/^    int x,h;$/;"	m	struct:item	file:	access:public
+item::l	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+item::num	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+item::r	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+item::u	cf#250/D.cpp	/^    int u,w;$/;"	m	struct:item	file:	access:public
+item::w	cf#250/D.cpp	/^    int u,w;$/;"	m	struct:item	file:	access:public
+item::x	hdu4831.cpp	/^    int x,h;$/;"	m	struct:item	file:	access:public
+l	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+limit	cf#250/B.cpp	/^int sum,limit;$/;"	v
+ll	2013杭州现场赛G.cpp	16;"	d	file:
+ll	2014ProvincalSelection/0.cpp	16;"	d	file:
+ll	2014ProvincalSelection/1.cpp	16;"	d	file:
+ll	2014ProvincalSelection/10.cpp	16;"	d	file:
+ll	2014ProvincalSelection/11.cpp	16;"	d	file:
+ll	2014ProvincalSelection/2.cpp	16;"	d	file:
+ll	2014ProvincalSelection/3.cpp	16;"	d	file:
+ll	2014ProvincalSelection/4.cpp	16;"	d	file:
+ll	2014ProvincalSelection/5.cpp	16;"	d	file:
+ll	2014ProvincalSelection/6.cpp	16;"	d	file:
+ll	2014ProvincalSelection/7.cpp	16;"	d	file:
+ll	2014ProvincalSelection/A.cpp	16;"	d	file:
+ll	cf#250/A.cpp	16;"	d	file:
+ll	cf#250/B.cpp	16;"	d	file:
+ll	cf#250/C.cpp	16;"	d	file:
+ll	cf#250/D.cpp	15;"	d	file:
+ll	hdu4827.cpp	4;"	d	file:
+ll	hdu4828.cpp	3;"	d	file:
+ll	hdu4829.cpp	16;"	d	file:
+ll	hdu4830.cpp	16;"	d	file:
+ll	hdu4831.cpp	16;"	d	file:
+ll	template.cpp	16;"	d	file:
+lowbit	hdu4831.cpp	/^int lowbit(int x){$/;"	f	signature:(int x)
+m	2014ProvincalSelection/11.cpp	/^int n,m;$/;"	v
+m	2014ProvincalSelection/5.cpp	/^int n,m;$/;"	v
+m	cf#250/C.cpp	/^int n,m;$/;"	v
+m	cf#250/D.cpp	/^int f[100005],n,m;$/;"	v
+main	2013杭州现场赛G.cpp	/^int main(){$/;"	f	signature:()
+main	2014ProvincalSelection/0.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/1.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/10.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/11.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/2.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/3.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/4.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/5.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/6.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/7.cpp	/^int main() {$/;"	f	signature:()
+main	2014ProvincalSelection/A.cpp	/^int main() {$/;"	f	signature:()
+main	cf#250/A.cpp	/^int main() {$/;"	f	signature:()
+main	cf#250/B.cpp	/^int main() {$/;"	f	signature:()
+main	cf#250/C.cpp	/^int main() {$/;"	f	signature:()
+main	cf#250/D.cpp	/^int main() {$/;"	f	signature:()
+main	hdu4827.cpp	/^int main(){ $/;"	f	signature:()
+main	hdu4828.cpp	/^int main(){ $/;"	f	signature:()
+main	hdu4829.cpp	/^int main() {$/;"	f	signature:()
+main	hdu4830.cpp	/^int main() {$/;"	f	signature:()
+main	hdu4831.cpp	/^int main() {$/;"	f	signature:()
+main	template.cpp	/^int main() {$/;"	f	signature:()
+main	test.cpp	/^int main()$/;"	f	signature:()
+merge_v	2013杭州现场赛G.cpp	/^void merge_v(vector<ll> a,vector<ll> b){$/;"	f	signature:(vector<ll> a,vector<ll> b)
+mod	hdu4827.cpp	/^ll mod = 1e9+7;$/;"	v
+mod	hdu4828.cpp	/^ll mod = 1e9+7;$/;"	v
+n	2013杭州现场赛G.cpp	/^int n,Q;$/;"	v
+n	2014ProvincalSelection/1.cpp	/^int n;$/;"	v
+n	2014ProvincalSelection/10.cpp	/^int n;$/;"	v
+n	2014ProvincalSelection/11.cpp	/^int n,m;$/;"	v
+n	2014ProvincalSelection/2.cpp	/^int n;$/;"	v
+n	2014ProvincalSelection/5.cpp	/^int n,m;$/;"	v
+n	2014ProvincalSelection/6.cpp	/^int n;$/;"	v
+n	cf#250/C.cpp	/^int n,m;$/;"	v
+n	cf#250/D.cpp	/^int f[100005],n,m;$/;"	v
+n	hdu4831.cpp	/^int n;$/;"	v
+num	2013杭州现场赛G.cpp	/^int num(int rt){$/;"	f	signature:(int rt)
+num	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+power_mod	hdu4827.cpp	/^ll power_mod(ll x,ll idx){$/;"	f	signature:(ll x,ll idx)
+power_mod	hdu4828.cpp	/^ll power_mod(ll x,ll idx){$/;"	f	signature:(ll x,ll idx)
+pri	2014ProvincalSelection/6.cpp	/^vector<int> pri;$/;"	v
+query	hdu4831.cpp	/^int query(int l){$/;"	f	signature:(int l)
+r	hdu4831.cpp	/^    int l,r,num;$/;"	m	struct:item	file:	access:public
+rev	hdu4827.cpp	/^ll rev[1000005],dp[1000005];$/;"	v
+rev	hdu4828.cpp	/^ll rev[1000005],dp[1000005];$/;"	v
+right	2014ProvincalSelection/1.cpp	/^int right(vector<int> a,vector<int> b){$/;"	f	signature:(vector<int> a,vector<int> b)
+s	2014ProvincalSelection/11.cpp	/^int s[100005],t[100005];$/;"	v
+s	2014ProvincalSelection/7.cpp	/^int cnt,s;$/;"	v
+s	cf#250/A.cpp	/^char s[1000];$/;"	v
+same	2014ProvincalSelection/1.cpp	/^int same(vector<int> a,vector<int> b){$/;"	f	signature:(vector<int> a,vector<int> b)
+solve	2014ProvincalSelection/5.cpp	/^int solve(){$/;"	f	signature:()
+sqr	2014ProvincalSelection/0.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/1.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/10.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/11.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/2.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/3.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/4.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/5.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/6.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/7.cpp	14;"	d	file:
+sqr	2014ProvincalSelection/A.cpp	14;"	d	file:
+sqr	cf#250/A.cpp	14;"	d	file:
+sqr	cf#250/B.cpp	14;"	d	file:
+sqr	cf#250/C.cpp	14;"	d	file:
+sqr	cf#250/D.cpp	13;"	d	file:
+sqr	hdu4829.cpp	14;"	d	file:
+sqr	hdu4830.cpp	14;"	d	file:
+sqr	hdu4831.cpp	14;"	d	file:
+sqr	template.cpp	14;"	d	file:
+sum	cf#250/B.cpp	/^int sum,limit;$/;"	v
+sum	cf#250/D.cpp	/^double sum[100005];$/;"	v
+t	2014ProvincalSelection/11.cpp	/^int s[100005],t[100005];$/;"	v
+t	2014ProvincalSelection/3.cpp	/^ll t[100005];$/;"	v
+three	2014ProvincalSelection/6.cpp	/^int three[100000][3],ans[100000];$/;"	v
+top	2013杭州现场赛G.cpp	/^int trie[N*30][ch+1],top;$/;"	v
+trie	2013杭州现场赛G.cpp	/^int trie[N*30][ch+1],top;$/;"	v
+two	2014ProvincalSelection/6.cpp	/^int two[100000][2];$/;"	v
+u	cf#250/D.cpp	/^    int u,w;$/;"	m	struct:item	file:	access:public
+update	hdu4831.cpp	/^void update(int i,int k,int h){$/;"	f	signature:(int i,int k,int h)
+vc	cf#250/D.cpp	/^vector<int> vc[100005];$/;"	v
+vis	2014ProvincalSelection/7.cpp	/^bool vis[100];$/;"	v
+vis	cf#250/D.cpp	/^bool vis[100005];$/;"	v
+w	2013杭州现场赛G.cpp	/^ll w[N];$/;"	v
+w	cf#250/D.cpp	/^    int u,w;$/;"	m	struct:item	file:	access:public
+x	hdu4831.cpp	/^    int x,h;$/;"	m	struct:item	file:	access:public
