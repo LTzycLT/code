@@ -29,6 +29,22 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
 
+" omni complete
+let OmniCpp_GlobalScopeSearch = 1  " 0 or 1 
+let OmniCpp_NamespaceSearch = 1   " 0 ,  1 or 2 
+let OmniCpp_DisplayMode = 1 
+let OmniCpp_ShowScopeInAbbr = 0 
+let OmniCpp_ShowPrototypeInAbbr = 1 
+let OmniCpp_ShowAccess = 1 
+let OmniCpp_MayCompleteDot = 1 
+let OmniCpp_MayCompleteArrow = 1 
+let OmniCpp_MayCompleteScope = 1
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 "ctags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 
