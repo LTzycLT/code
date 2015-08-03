@@ -17,8 +17,6 @@
 using namespace std;
 
 int main() {
-//    freopen("/home/zyc/Downloads/in","r",stdin);
-//    freopen("/home/zyc/Downloads/out","w",stdout);
 //    freopen("/home/zyc/Documents/code/acm/in","r",stdin);
     return 0;
 }
