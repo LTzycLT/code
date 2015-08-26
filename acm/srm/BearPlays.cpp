@@ -5,23 +5,35 @@
 #include <algorithm>
 #include <cmath>
 #include <vector>
+#include <map>
 #define INC(x,y) {x = (x+y);if(x>=mod) x-=mod;}
 #define Min(x,y) {if(y<x) x=y;}
 #define Max(x,y) {if(y>x) x=y;}
 #define clr(x,y) memset(x,y,sizeof(x))
 using namespace std ;
 typedef long long ll ;
-const double eps = 1e-6 ;
-const int inf = 1e8;
 
+
+ll power(ll a, int idx, ll mod)
+{
+    ll ans = 1;
+    while(idx)
+    {
+        if(idx & 1) ans *= a;
+        a *= a;
+        idx >>= 1;
+        if(ans >= mod) ans %= mod;
+        if(a >= mod) a %= mod;
+    }
+    return ans;
+}
  
 class BearPlays
 {
 public:
 	int pileSize(int A, int B, int K){
-
-
-		return int() ;
+        ll ans = A * power(2, K, A + B) % (A + B);
+        return min(ans, A + B - ans);
 	}
 
 

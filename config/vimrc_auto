@@ -46,7 +46,7 @@ Bundle 'vim-scripts/ctags.vim'
 " original repos on GitHub
 " markdown
 "Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
+"Bundle 'plasticboy/vim-markdown'
 
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'

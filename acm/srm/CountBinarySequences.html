@@ -1,0 +1,114 @@
+PROBLEM STATEMENT
+
+Anu loves binary sequences of length n.
+A binary sequence of length n has n elements (indexed from 1 to n) and each of those elements is either a zero (0) or a one (1).
+
+
+
+You are given the int n.
+You are also given an int k and two equally long vector <int>s L and R.
+For each valid i, the values L[i] and R[i] are the left and right endpoints of a range of indices.
+Both endpoints are included in the range.
+For example, L[0]=3 and R[0]=7 represents the indices from 3 to 7, inclusive.
+We will denote this range [3,7].
+
+
+
+The ranges defined by L and R satisfy one additional restriction:
+Given any two ranges, either one is contained in the other, or they are disjoint.
+For example, it cannot be the case that L = {1, 4, 10} and R = {5, 7, 20} because none of the ranges [1,5] and [4,7] contains the other, and they are also not disjoint.
+
+
+
+Anu wants to count the number of binary sequences of length n that satisfy the following properties:
+
+There are never more than k consecutive ones in the sequence.
+Each of the ranges defined by L and R has an even sum.
+
+Return the number of such sequences, modulo 10^9 + 7.
+
+
+DEFINITION
+Class:CountBinarySequences
+Method:countSequences
+Parameters:int, int, vector <int>, vector <int>
+Returns:int
+Method signature:int countSequences(int n, int k, vector <int> L, vector <int> R)
+
+
+CONSTRAINTS
+-n will be between 1 and 1,000,000,000 (10^9), inclusive.
+-k will be between 1 and 5, inclusive.
+-L will contain between 1 and 50 elements, inclusive.
+-R will contain the same number of elements as L.
+-For each valid i, L[i] will be less than or equal to R[i].
+-All elements of L and R will be between 1 and n, inclusive.
+-All ranges defined by L and R will be distinct.
+-For any two ranges defined by L and R, either one will be contained in the other, or they will be disjoint.
+
+
+EXAMPLES
+
+0)
+4
+2
+{2}
+{3}
+
+Returns: 5
+
+The five valid sequences are 0000, 0001, 0110, 1000, and 1001.
+
+1)
+4
+1
+{2}
+{2}
+
+Returns: 6
+
+We cannot have two consecutive ones.
+The range [2,2] contains only the index 2.
+As the sum of this range must be even, the element at index 2 must be a zero.
+Hence, the six valid sequences are 0000, 0001, 0010, 1000, 1001, and 1010.
+
+
+2)
+6
+3
+{1, 2, 3}
+{6, 5, 4}
+
+Returns: 6
+
+
+
+3)
+1000
+4
+{10, 101, 201, 110, 121}
+{100, 200, 300, 120, 130}
+
+Returns: 444743885
+
+
+
+4)
+1
+5
+{1}
+{1}
+
+Returns: 1
+
+
+
+5)
+998
+2
+{313,365,189,913,334,360,160,931,313,402,389,328,376,47,906,383,381,927,338,178,934,933,162,332,191,188,380,912,970,360,161,179,966,405,971,381}
+{313,365,189,913,334,362,160,931,340,405,389,329,398,425,907,383,382,927,338,178,934,933,162,332,191,188,384,912,970,365,161,179,966,405,971,381}
+
+Returns: 420889003
+
+
