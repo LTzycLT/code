@@ -1,0 +1,4 @@
+add_library(libgenerator distribution.cpp generate_linearly_separable_point.cpp)
+set_target_properties(libgenerator PROPERTIES OUTPUT_NAME "generator")
+
+target_link_libraries(libgenerator)

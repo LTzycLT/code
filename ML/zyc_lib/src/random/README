@@ -1,0 +1,7 @@
+cite from <Numerical Receipt in C> Chapter 7
+
+On balance, we recommend ran1 for general use. It is portable, based on
+Park and Miller’s Minimal Standard generator with an additional shuffle, and has no known (to us) flaws other than period exhaustion.
+
+If you are generating more than 100,000,000 random numbers in a single calculation (that is, more than about 5% of ran1’s period), we recommend the use of ran2, with its much longer period.
+
