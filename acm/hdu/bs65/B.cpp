@@ -17,6 +17,15 @@
 using namespace std;
 
 int main() {
-    freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    //freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    int T;
+    scanf("%d", &T);
+    while(T--)
+    {
+        int n;
+        scanf("%d", &n);
+        if((n - 1) % 2 == 0)  printf("%d\n", 1);
+        else puts("0");
+    }
     return 0;
 }

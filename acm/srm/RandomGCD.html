@@ -1,0 +1,83 @@
+PROBLEM STATEMENT
+Consider the integers between low and high, inclusive.
+We are going to select a sequence of N integers from this range.
+The sequence is allowed to contain repeated elements, hence there are (high-low+1)^N possible sequences (where '^' denotes exponentiation).
+
+Out of those sequences, we are only interested in the ones that have one additional property:
+the greatest common divisor (GCD) of their elements must be exactly K.
+
+You are given the ints N, K, low, and high.
+Let X be the number of N-tuples described above.
+Because X can be very large, compute and return the value (X modulo 1,000,000,007).
+
+DEFINITION
+Class:RandomGCD
+Method:countTuples
+Parameters:int, int, int, int
+Returns:int
+Method signature:int countTuples(int N, int K, int low, int high)
+
+
+NOTES
+-The greatest common divisor of a sequence is the largest positive integer that divides each element of the sequence.
+
+
+CONSTRAINTS
+-N, K and low will each be between 1 and 1,000,000,000, inclusive.
+-high will be between low and 1,000,000,000, inclusive.
+-The difference high - low will be less than or equal to 100,000.
+
+
+EXAMPLES
+
+0)
+2
+2
+2
+4
+
+Returns: 3
+
+There are 9 possible sequences: {(2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (3, 4), (4, 2), (4, 3), (4, 4)}.
+Out of these, 3 of them have the requested gcd of 2: {(2, 2), (2, 4), (4, 2)}.
+Hence, the answer is 3.
+
+1)
+2
+100
+2
+4
+
+Returns: 0
+
+Sometimes no combinations yield the requested GCD.
+
+2)
+1
+5
+5
+5
+
+Returns: 1
+
+Sometimes you select only one number.
+
+3)
+73824
+17347
+9293482
+9313482
+
+Returns: 0
+
+
+
+4)
+222
+222
+222
+22222
+
+Returns: 339886855
+
+

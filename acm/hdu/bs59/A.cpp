@@ -16,7 +16,28 @@
 #define ll long long
 using namespace std;
 
+int n;
+int a[100];
 int main() {
     freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    int T;
+    scanf("%d", &T);
+    while(T--)
+    {
+        scanf("%d", &n);        
+        int ans = n;
+        for(int i = 0; i < n; i++)
+        {
+            scanf("%d", &a[i]);
+        }
+        for(int i = n - 1; i >= 0; i--)
+        {
+            if(a[i] == ans) 
+            {
+                ans -= 1; 
+            }
+        }
+        printf("%d\n", ans);
+    }
     return 0;
 }

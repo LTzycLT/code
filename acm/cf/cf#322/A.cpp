@@ -16,7 +16,10 @@
 #define ll long long
 using namespace std;
 
+int a, b;
 int main() {
-    freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    //freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    scanf("%d%d", &a, &b);
+    printf("%d %d\n", min(a, b), (a + b) / 2 - min(a, b));
     return 0;
 }

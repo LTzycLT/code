@@ -19,22 +19,22 @@ using namespace std;
 const ll mod = 1e9+7;
 ll c[4005][4005];
 ll dp[4005][2][2];
-ll x;
 
 
 ll dfs(int n, int l, int r)
 {
+    ll w = n - l - r;
     if(n == 0) return 1;
-    if(n == 1) return x - l - r;
+    if(n == 1) return w;
     if(dp[n][l][r] != -1) return dp[n][l][r];
     dp[n][l][r] = 0;
     for(int i = 0; i < n; i++)
     {
-        if(i == 0) dp[n][l][r] += (x - l) * dfs(n - 1, 1, r);
-        else if(i == n - 1) dp[n][l][r] += (x - r) * dfs(n - 1, l, 1);
+        if(i == 0) dp[n][l][r] += w * dfs(n - 1, 1, r);
+        else if(i == n - 1) dp[n][l][r] += w * dfs(n - 1, l, 1);
         else
         {
-            dp[n][l][r] += x * dfs(i, l, 1) % mod * dfs(n - i - 1, 1, r) % mod * c[n - 1][i] % mod;
+            dp[n][l][r] += w * dfs(i, l, 1) % mod * dfs(n - i - 1, 1, r) % mod * c[][] % mod;
         }
         if(dp[n][l][r] >= mod) dp[n][l][r] %= mod;
     }
@@ -45,7 +45,6 @@ class SumOverPermutations
     public:
         int findSum(int n)
         {
-            x = n;
             c[0][0] = 1;
             for(int i = 1; i <= n; i++)
             {
@@ -56,7 +55,8 @@ class SumOverPermutations
                 }
             }
             for(int i = 0; i <= n; i++) for(int j = 0; j < 2; j++) for(int k = 0; k < 2; k++) dp[i][j][k] = -1;
-            return dfs(n, 0, 0);
+            dfs(n, 0, 0);
+            return dp[n][0][0];
         }
         
 // BEGIN CUT HERE
@@ -78,7 +78,7 @@ class SumOverPermutations
 int main()
 {
     SumOverPermutations ___test;
-    ___test.run_test(-1);
+    ___test.run_test(0);
     system("pause");
 }
 // END CUT HERE

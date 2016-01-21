@@ -16,7 +16,22 @@
 #define ll long long
 using namespace std;
 
+int a[100005], b[100005];
+int n;
+
 int main() {
     freopen("/home/zyc/Documents/code/acm/in","r",stdin);
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++) scanf("%d", &a[i]);
+
+    int maxx = 0;
+    for(int i = n - 1; i >= 0; i--)
+    {
+        b[i] = max(0, maxx + 1 - a[i]);
+        maxx = max(maxx, a[i]);
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", b[i]);
+    puts("");
     return 0;
 }

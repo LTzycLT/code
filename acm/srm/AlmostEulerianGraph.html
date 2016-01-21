@@ -1,0 +1,54 @@
+PROBLEM STATEMENT
+In this problem we consider undirected graphs on n vertices.
+The vertices are numbered 0 through n-1.
+The graphs are simple: they do not contain self-loops, and each pair of vertices is directly connected using at most one edge.
+
+An undirected connected graph is called Eulerian if there is a closed walk that contains each edge of the graph exactly once.
+(A closed walk is a sequence of consecutive edges that starts and ends in the same vertex.)
+
+Bomboslav invented his own kind of graphs that he calls almost-Eulerian.
+All Eulerian graphs are also almost-Eulerian.
+Additionally, a graph is also almost-Eulerian if there exists a way to add or remove exactly one edge to/from it in such a way that the resulting graph becomes Eulerian.
+(Note that if you are adding an edge, you are not allowed to create a self-loop and you are not allowed to connect vertices that are already connected by another edge.)
+
+An example of an almost-Eulerian graph.After removing the selected edge, it becomes Eulerian..
+
+Bomboslav is now interested in calculating the number X of different almost-Eulerian graphs on n vertices.
+Two graphs are considered different if there exists a pair of indices 0 <= i < j <= n-1 such that the edge (i, j) is present in exactly one of those two graphs.
+Compute and return the value (X modulo 1,000,000,007).
+
+DEFINITION
+Class:AlmostEulerianGraph
+Method:calculateGraphs
+Parameters:int
+Returns:int
+Method signature:int calculateGraphs(int n)
+
+
+CONSTRAINTS
+-n will be between 2 and 2000, inclusive.
+
+
+EXAMPLES
+
+0)
+3
+
+Returns: 4
+
+All almost-Eulerian graphs are shown in the picture below.
+
+
+1)
+2
+
+Returns: 0
+
+Note that an empty graph on 2 vertices isn't Eulerian since it is disconnected.
+
+2)
+42
+
+Returns: 29010676
+
+

@@ -17,6 +17,7 @@ set t_Co=256
 syntax on
 syntax enable
 set background=dark
+set hlsearch
 "colorscheme solarized
 
 "map
@@ -26,6 +27,9 @@ inoremap { {}<ESC>i
 "inoremap < <><ESC>i
 inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
+
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 let g:ycm_global_ycm_extra_conf = '/home/zyc/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -89,6 +93,14 @@ func! Run()
     \ clear;
 	\ python3 %;"
 	endif
+
+    if &filetype == 'r'
+	exec "w"
+	exec "! 
+    \ clear;
+	\ Rscript %;"
+	endif
+
 
 	if &filetype == 'c'
 	exec "w"
