@@ -2,25 +2,66 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+alias raid_tunnel='/home/zyc/shell/raid_tunnel.sh'
+alias raid_tunnel_remote='/home/zyc/shell/raid_tunnel_remote.sh'
+
 #256color
 export TERM=xterm-256color
 
 PYTHON_INCLUDE_DIRS=/usr/include/python2.7 
 PYTHON_LIBRARIES=/usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so
 
+#shell
+export PATH=$PATH:/home/zyc/shell
+
+#scala
+export PATH=$PATH:/home/zyc/Documents/Tools/scala-2.11.8/bin/
+
+#go
+export GOROOT=/home/zyc/Documents/Tools/go
+export GOPATH=/home/zyc/Documents/Tools/gopath/
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+
+
 #java path
-export JAVA_PATH=/home/zyc/Downloads/tar/tar/jdk1.7.0_25
+#export JAVA_PATH=/home/zyc/Documents/Tools/Java/jdk1.7.0_25
+export JAVA_PATH=/home/zyc/Documents/Tools/Java/jdk1.8.0_40
+export JAVA_HOME=$JAVA_PATH
 export PATH=$JAVA_PATH/bin/:$PATH
-export SDK=/home/zyc/Documents/Tools/android_sdk
-export NDK=/home/zyc/Documents/Tools/android_sdk/android-ndk-r10c
-export NDKR10C=/home/zyc/Documents/Tools/android_sdk/android-ndk-r10c
-export NDKR9C=/home/zyc/Documents/Tools/android_sdk/android-ndk-r10c
+export SDK=~/Documents/Tools/android_sdk
+export NDK=~/Documents/Tools/android-ndk-r10c
+export NDKR10C=~/Documents/Tools/android-ndk-r10c
+export NDKR9C=~/Documents/Tools/android-ndk-r10c
 
 #jni lib
-export JNI_PATH=/home/zyc/Documents/work/JNI
+export JNI_PATH=~/Documents/work/JNI
 export LD_LIBRARY_PATH=$JNI_PATH:$LD_LIBRARY_PATH
 
-myrm(){ D=/home/zyc/.trash/$(date +%Y%m); mkdir -p $D;  mv "$@" $D/$(date +%Y%m%d%H%M)_temp && echo "moved to $D ok"; }
+#hadoop
+export HADOOP_HOME=/home/zyc/Documents/Tools/hadoop-2.6.0
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export HADOOP_MAPRED_HOME=$HADOOP_HOME 
+export HADOOP_COMMON_HOME=$HADOOP_HOME 
+export HADOOP_HDFS_HOME=$HADOOP_HOME 
+export YARN_HOME=$HADOOP_HOME 
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native 
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin 
+export HADOOP_INSTALL=$HADOOP_HOME 
+
+#spark
+export SPARK_HOME=/home/zyc/Documents/Tools/spark-2.0.0-bin-hadoop2.7
+export PATH=$PATH:$SPARK_HOME/bin/:$SPARK_HOME/sbin
+
+#drill
+export DRILL_HOME=/home/zyc/Documents/Tools/apache-drill-1.6.0
+export PATH=$PATH:$DRILL_HOME/bin/
+
+#pyspark ipython
+#export PYSPARK_DRIVER_PYTHON=jupyter
+#export PYSPARK_DRIVER_PYTHON_OPTS='notebook' pyspark
+
+myrm(){ D=~/.trash/$(date +%Y%m); mkdir -p $D;  mv "$@" $D/$(date +%Y%m%d%H%M)_temp && echo "moved to $D ok"; }
 alias rm="myrm"
 
 #cd ..
@@ -32,6 +73,9 @@ alias ..5="cd ../../../../.."
 alias ..6="cd ../../../../../.."
 alias ..7="cd ../../../../../../.."
 alias ..8="cd ../../../../../../../.."
+
+#google code jam: distributed
+export PATH=$PATH:/home/zyc/Documents/code/acm/gcj#2016/dcj/dcj_linux
 
 
 # If not running interactively, don't do anything
@@ -137,3 +181,10 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+#export PYTHONPATH="${PYTHONPATH}:/home/zyc/Documents/code/python/zyc_lib"
+
+# added by Anaconda2 4.2.0 installer
+export PATH="/home/zyc/Documents/Tools/anaconda2/bin:$PATH"
+
+# added by Anaconda3 installer
+export PATH="/home/zyc/anaconda3/bin:$PATH"

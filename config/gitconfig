@@ -1,6 +1,6 @@
 [user]
-	name = _LT_zyc
-	email = LTzycLT@gmail.com
+	name = yongchao.zhou
+	email = yongchao.zhou@cootek.cn
 [color]
 	ui = true
 [alias]
@@ -9,3 +9,8 @@
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''%C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     st = status
     stu = status -uno
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
